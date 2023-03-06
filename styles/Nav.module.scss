@@ -5,20 +5,26 @@
   padding: 1rem;
 }
 
+.hamburger {
+  display: none;
+}
+
 .name {
   border-right: 1px solid $lines-color;
-  padding: 1rem 10rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 20vw;
+  min-width: 15rem;
 }
 
 .nav {
   border-bottom: 1px solid $lines-color;
   display: flex;
-  font-size: 16px;
-  justify-content: space-between;
 }
 
-.nav_left {
+.nav_menu {
   display: flex;
+  justify-content: space-between;
+  width: 80vw;
 }
 
 .list {
@@ -34,5 +40,49 @@
   color: $secondary-color-grey;
   &:hover {
     color: $secondary-color-white;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav_menu {
+    position: fixed;
+    right: -100%;
+    top: 3.5rem;
+    flex-direction: column;
+    background-color: $primary-color-two;
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .link {
+    color: $secondary-color-white;
+  }
+
+  .name {
+    border: none;
+  }
+
+  .list {
+    flex-direction: column;
+    & > * {
+      border-bottom: 1px solid $lines-color;
+    }
+  }
+
+  .contact {
+    border-bottom: 1px solid $lines-color;
+  }
+
+  .nav {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    display: block;
+    font-size: 24px;
+    padding: 8.5px 1rem 0 0;
   }
 }

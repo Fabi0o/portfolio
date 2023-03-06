@@ -5,8 +5,8 @@ const Nav = () => {
   return (
     <header>
       <nav className={styles.nav}>
-        <div className={styles.nav_left}>
-          <div className={styles.name}>marcin-fabicki</div>
+        <div className={styles.name}>marcin-fabicki</div>
+        <div className={styles.nav_menu}>
           <ul className={styles.list}>
             <li>
               <Link className={styles.link} href="/">
@@ -24,11 +24,14 @@ const Nav = () => {
               </Link>
             </li>
           </ul>
+          <div className={styles.contact}>
+            <Link className={styles.link} href="/contact">
+              _contact-me
+            </Link>
+          </div>
         </div>
-        <div className={styles.contact}>
-          <Link className={styles.link} href="/contact">
-            _contact-me
-          </Link>
+        <div className={styles.hamburger}>
+          <i className="ri-menu-line"></i>
         </div>
       </nav>
     </header>
