@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import "./colors.module";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $primary-color-two;
+  color: $secondary-color-grey;
+  font-family: Fira Code;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
