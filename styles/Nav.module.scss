@@ -45,14 +45,16 @@
 
 @media only screen and (max-width: 768px) {
   .nav_menu {
+    background-color: $primary-color-two;
+    flex-direction: column;
     position: fixed;
     right: -100%;
     top: 3.5rem;
-    flex-direction: column;
-    background-color: $primary-color-two;
+    transition: 0.5s;
     width: 100%;
-    border-radius: 10px;
-    transition: 0.3s;
+    &.active {
+      right: 0;
+    }
   }
 
   .link {
@@ -67,6 +69,7 @@
     flex-direction: column;
     & > * {
       border-bottom: 1px solid $lines-color;
+      border-left: 1px solid $lines-color;
     }
   }
 
