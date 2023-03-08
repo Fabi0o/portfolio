@@ -12,9 +12,8 @@ const Nav = () => {
     navMenu!.classList.toggle(styles.active);
   };
 
-  const closeMenu = (e: React.MouseEvent<HTMLElement>) => {
-    const target = e.target as HTMLElement;
-    const navMenu = target.parentElement?.parentElement?.parentElement!;
+  const closeMenu = () => {
+    const navMenu = document.querySelector(`.${styles.nav_menu}`)!;
     const icone = document.querySelector("i")!;
 
     if (navMenu.className == `${styles.nav_menu} ${styles.active}`) {
@@ -27,6 +26,7 @@ const Nav = () => {
     <header>
       <nav className={styles.nav}>
         <div className={styles.name}>marcin-fabicki</div>
+
         <div className={styles.nav_menu}>
           <ul className={styles.list}>
             <li>
@@ -34,11 +34,13 @@ const Nav = () => {
                 _hello
               </Link>
             </li>
+
             <li>
               <Link className={styles.link} href="/about" onClick={closeMenu}>
                 _about-me
               </Link>
             </li>
+
             <li>
               <Link
                 className={styles.link}
@@ -49,12 +51,14 @@ const Nav = () => {
               </Link>
             </li>
           </ul>
+
           <div className={styles.contact}>
             <Link className={styles.link} href="/contact" onClick={closeMenu}>
               _contact-me
             </Link>
           </div>
         </div>
+
         <div className={styles.hamburger}>
           <i className="ri-menu-line" onClick={displayMenu}></i>
         </div>
