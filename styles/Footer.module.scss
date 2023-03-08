@@ -1,0 +1,36 @@
+@import "./colors.module";
+
+.footer {
+  position: fixed;
+  border-top: 1px solid $lines-color;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_socials {
+  border-right: 1px solid $lines-color;
+  display: flex;
+
+  & > * {
+    padding: 1rem;
+  }
+}
+
+.icone {
+  font-size: 20px;
+}
+
+.link {
+  align-items: center;
+  border-left: 1px solid $lines-color;
+  color: $secondary-color-grey;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+
+  &:hover {
+    color: $secondary-color-white;
+  }
+}
