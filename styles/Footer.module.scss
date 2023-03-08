@@ -34,3 +34,13 @@
     color: $secondary-color-white;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .footer_socials {
+    border-right: none;
+    flex-grow: 1;
+    & > div {
+      flex-grow: 1;
+    }
+  }
+}
