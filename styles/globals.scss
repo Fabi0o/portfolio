@@ -7,11 +7,11 @@
   padding: 0;
 }
 
-html {
+body {
   background-color: $primary-color-two;
   color: $secondary-color-grey;
   font-family: Fira Code;
-  height: 150vh;
+  height: 100vh;
 }
 
 li {
@@ -20,4 +20,8 @@ li {
 
 a {
   text-decoration: none;
+}
+
+main {
+  flex-grow: 1;
 }

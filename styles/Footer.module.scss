@@ -1,10 +1,10 @@
 @import "./colors.module";
 
 .footer {
-  position: fixed;
+  //   position: fixed;
   border-top: 1px solid $lines-color;
-  bottom: 0;
-  width: 100vw;
+  //   bottom: 0;
+  //   width: 100vw;
   display: flex;
   justify-content: space-between;
 }
