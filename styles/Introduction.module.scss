@@ -1,0 +1,67 @@
+@import "./colors.module";
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 10vw;
+}
+
+.welcome_text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.code_snippet {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  & > * {
+    font-size: 14px;
+  }
+}
+
+.greeting {
+  color: $secondary-color-white;
+}
+
+.name {
+  color: $secondary-color-white;
+  white-space: nowrap;
+}
+
+.position {
+  color: $secondary-color-purple;
+}
+
+.const {
+  color: $secondary-color-white;
+
+  & :nth-child(1) {
+    color: $secondary-color-purple;
+  }
+
+  & :nth-child(2) {
+    color: $gradients-color-green;
+  }
+
+  & :nth-child(3) {
+    color: $accent-color-orange;
+    & a {
+      color: $accent-color-orange;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .name {
+    white-space: normal;
+  }
+  .container {
+    padding: 0 10vw;
+  }
+}
