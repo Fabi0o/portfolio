@@ -6,6 +6,8 @@ export default function Home() {
     <div className={styles.container}>
       <Introduction />
       <div className={styles.container_right}></div>
+      <div className={styles.blurry_gradient_green}></div>
+      <div className={styles.blurry_gradient_purple}></div>
     </div>
   );
 }
