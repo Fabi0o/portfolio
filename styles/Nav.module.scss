@@ -45,7 +45,9 @@
 
 .current {
   border-bottom: 3px solid $accent-color-orange;
-  color: $secondary-color-white;
+  & > * {
+    color: $secondary-color-white;
+  }
 }
 
 @media only screen and (max-width: 768px) {
