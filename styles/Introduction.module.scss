@@ -68,3 +68,12 @@
     font-size: 20px;
   }
 }
+
+@media only screen and (max-width: 350px) {
+  .const {
+    font-size: 9px;
+  }
+  .name {
+    font-size: 50px;
+  }
+}
