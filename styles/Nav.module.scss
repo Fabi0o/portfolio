@@ -54,6 +54,8 @@
   .nav_menu {
     background-color: $primary-color-two;
     flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
     position: fixed;
     right: -100%;
     top: 3.5rem;
