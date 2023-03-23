@@ -54,7 +54,7 @@
 
 @media only screen and (max-width: 768px) {
   .nav_menu {
-    background-color: $primary-color-two;
+    backdrop-filter: blur(10px);
     flex-direction: column;
     height: 100%;
     justify-content: flex-start;

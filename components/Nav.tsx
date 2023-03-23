@@ -40,11 +40,11 @@ const Nav = () => {
     navMenu!.classList.toggle(styles.active);
   };
 
-  const closeMenu = () => {
+  const closeMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     const navMenu = document.querySelector(`.${styles.nav_menu}`)!;
     const icone = document.querySelector("i")!;
 
-    toggleCurrentClass(asPath, "remove");
+    if (e.target != navMenu) toggleCurrentClass(asPath, "remove");
 
     if (navMenu.className == `${styles.nav_menu} ${styles.active}`) {
       navMenu.classList.toggle(styles.active);
@@ -57,33 +57,29 @@ const Nav = () => {
       <nav className={styles.nav}>
         <div className={styles.name}>marcin-fabicki</div>
 
-        <div className={styles.nav_menu}>
+        <div className={styles.nav_menu} onClick={closeMenu}>
           <ul className={styles.list}>
             <li id="home">
-              <Link className={styles.link} href="/" onClick={closeMenu}>
+              <Link className={styles.link} href="/">
                 _hello
               </Link>
             </li>
 
             <li id="about">
-              <Link className={styles.link} href="/about" onClick={closeMenu}>
+              <Link className={styles.link} href="/about">
                 _about-me
               </Link>
             </li>
 
             <li id="projects">
-              <Link
-                className={styles.link}
-                href="/projects"
-                onClick={closeMenu}
-              >
+              <Link className={styles.link} href="/projects">
                 _projects
               </Link>
             </li>
           </ul>
 
           <div className={styles.contact} id="contact">
-            <Link className={styles.link} href="/contact" onClick={closeMenu}>
+            <Link className={styles.link} href="/contact">
               _contact-me
             </Link>
           </div>
