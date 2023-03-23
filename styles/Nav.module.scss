@@ -2,7 +2,7 @@
 
 .contact {
   border-left: 1px solid $lines-color;
-  padding: 1rem;
+  display: flex;
 }
 
 .hamburger {
@@ -17,6 +17,7 @@
 }
 
 .nav {
+  align-items: center;
   border-bottom: 1px solid $lines-color;
   display: flex;
 }
@@ -32,12 +33,13 @@
 
   & > li {
     border-right: 1px solid $lines-color;
-    padding: 1rem;
+    display: flex;
   }
 }
 
 .link {
   color: $secondary-color-grey;
+  padding: 1rem;
   &:hover {
     color: $secondary-color-white;
   }
@@ -68,6 +70,7 @@
 
   .link {
     color: $secondary-color-white;
+    width: 100%;
   }
 
   .name {

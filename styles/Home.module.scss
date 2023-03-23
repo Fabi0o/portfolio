@@ -44,6 +44,11 @@
   opacity: 0.2;
 }
 
+.blurry_gradient_purple,
+.blurry_gradient_green {
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 768px) {
   .container_right {
     display: none;
