@@ -1,13 +1,40 @@
 import styles from "@/styles/AboutMeMenu.module.scss";
+import { Info, InfoProps } from "@/types/Info";
+import { useEffect } from "react";
 
-const AboutMeMenu = () => {
+const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
+  useEffect(() => {
+    const element = document.getElementById(currentInfo);
+
+    element?.classList.add(styles.current);
+  }, [currentInfo]);
+
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    const target = e.target as HTMLElement;
+    const current = document.getElementById(currentInfo);
+
+    current?.classList.remove(styles.current);
+    setCurrentInfo(target.id as Info);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.menu}>
-        <i className="ri-terminal-box-fill"></i>
-        <i className="ri-user-4-fill"></i>
-        <i className="ri-gamepad-fill"></i>{" "}
+        <i
+          onClick={handleClick}
+          id="professionalInfo"
+          className="ri-terminal-box-fill"
+        ></i>
+
+        <i
+          onClick={handleClick}
+          id="personalInfo"
+          className="ri-user-4-fill"
+        ></i>
+
+        <i onClick={handleClick} id="hobbyInfo" className="ri-gamepad-fill"></i>
       </div>
+
       <div className={styles.topContent}></div>
       <div className={styles.bottomContent}></div>
     </div>

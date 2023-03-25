@@ -22,6 +22,10 @@
   }
 }
 
+.current {
+  color: $secondary-color-white;
+}
+
 .topContent,
 .bottomContent {
   border-color: $lines-color;
