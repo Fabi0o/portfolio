@@ -1,6 +1,7 @@
 import styles from "@/styles/AboutMeMenu.module.scss";
 import { Info, InfoProps } from "@/types/Info";
 import { useEffect } from "react";
+import DropdownInfo from "./DropdownInfo";
 
 const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
   useEffect(() => {
@@ -35,8 +36,10 @@ const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
         <i onClick={handleClick} id="hobbyInfo" className="ri-gamepad-fill"></i>
       </div>
 
-      <div className={styles.topContent}></div>
-      <div className={styles.bottomContent}></div>
+      <div className={styles.content}>
+        <DropdownInfo />
+        <DropdownInfo />
+      </div>
     </div>
   );
 };

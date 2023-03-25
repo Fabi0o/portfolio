@@ -3,7 +3,6 @@
 .container {
   display: grid;
   grid-template-columns: 3rem auto;
-  grid-template-rows: 2fr 3fr;
 }
 
 .menu {
@@ -26,13 +25,8 @@
   color: $secondary-color-white;
 }
 
-.topContent,
-.bottomContent {
+.content {
   border-color: $lines-color;
   border-style: solid;
   border-width: 0px 1px;
-}
-
-.topContent {
-  border-bottom: 1px solid $lines-color;
 }
