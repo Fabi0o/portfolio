@@ -15,7 +15,7 @@ const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
     const current = document.getElementById(currentInfo);
 
     current?.classList.remove(styles.current);
-    setCurrentInfo(target.id as Info);
+    setCurrentInfo!(target.id as Info);
   };
 
   return (
@@ -23,21 +23,22 @@ const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
       <div className={styles.menu}>
         <i
           onClick={handleClick}
-          id="professionalInfo"
+          id="professional-info"
           className="ri-terminal-box-fill"
         ></i>
 
         <i
           onClick={handleClick}
-          id="personalInfo"
+          id="personal-info"
           className="ri-user-4-fill"
         ></i>
 
-        <i onClick={handleClick} id="hobbyInfo" className="ri-gamepad-fill"></i>
+        <i onClick={handleClick} id="hobbies" className="ri-gamepad-fill"></i>
       </div>
 
       <div className={styles.content}>
-        <DropdownInfo />
+        <DropdownInfo currentInfo={currentInfo} />
+        <DropdownInfo currentInfo={"contacts"} />
       </div>
     </div>
   );

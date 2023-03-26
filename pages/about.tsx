@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Info } from "@/types/Info";
 
 const About = () => {
-  const [currentInfo, setCurrentInfo] = useState<Info>("professionalInfo");
+  const [currentInfo, setCurrentInfo] = useState<Info>("professional-info");
   return (
     <div className={styles.container}>
       <AboutMeMenu currentInfo={currentInfo} setCurrentInfo={setCurrentInfo} />
