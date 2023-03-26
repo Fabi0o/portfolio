@@ -11,4 +11,21 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
+
+  &:hover {
+    color: $secondary-color-white;
+    cursor: pointer;
+  }
+
+  & > i {
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
+.active {
+  color: $secondary-color-white;
+
+  & > i {
+    transform: rotate(90deg);
+  }
 }

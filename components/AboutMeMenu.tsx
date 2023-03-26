@@ -38,7 +38,6 @@ const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
 
       <div className={styles.content}>
         <DropdownInfo />
-        <DropdownInfo />
       </div>
     </div>
   );
