@@ -1,15 +1,16 @@
 import styles from "@/styles/DropdownInfo.module.scss";
+import { useRef } from "react";
 
 const DropdownInfo = () => {
-  const displayBody = () => {
-    const header = document.getElementById("personalHeader");
+  const dropdownHeader = useRef<HTMLDivElement>(null);
 
-    header?.classList.toggle(`${styles.active}`);
+  const displayBody = () => {
+    dropdownHeader.current!.classList.toggle(`${styles.active}`);
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.header} id="personalHeader" onClick={displayBody}>
+      <div className={styles.header} ref={dropdownHeader} onClick={displayBody}>
         <i className="ri-play-fill"></i>personal-info
       </div>
       <div className={styles.body}></div>
