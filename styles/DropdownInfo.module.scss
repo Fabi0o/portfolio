@@ -29,3 +29,20 @@
     transform: rotate(90deg);
   }
 }
+
+.body {
+  border-bottom: 1px solid $lines-color;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+  & > * {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.visible {
+  display: flex;
+}
