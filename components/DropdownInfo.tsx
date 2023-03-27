@@ -17,20 +17,49 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
         <i className="ri-play-fill"></i>
         {currentInfo}
       </div>
-      <div className={styles.body} ref={dropdownBody}>
-        <div>
-          <i className="ri-arrow-right-s-line"></i>
-          folder 1
+      {currentInfo == "contacts" && (
+        <div className={styles.body} ref={dropdownBody}>
+          <div>
+            <i className="ri-mail-fill"></i>
+            marcin.fabicki@yahoo.com
+          </div>
+          <div>
+            <i className="ri-phone-fill"></i>
+            +48693737612
+          </div>
         </div>
-        <div>
-          <i className="ri-arrow-right-s-line"></i>
-          folder 1
+      )}
+
+      {currentInfo == "professional-info" && (
+        <div className={styles.body} ref={dropdownBody}>
+          <div>
+            <i className="ri-arrow-right-s-line"></i>
+            work-history
+          </div>
+          <div>
+            <i className="ri-arrow-right-s-line"></i>
+            skills
+          </div>
         </div>
-        <div>
-          <i className="ri-arrow-right-s-line"></i>
-          folder 1
+      )}
+
+      {currentInfo == "hobbies" && (
+        <div className={styles.body} ref={dropdownBody}>
+          <div>
+            <i className="ri-arrow-right-s-line"></i>
+            interests
+          </div>
         </div>
-      </div>
+      )}
+
+      {currentInfo == "personal-info" && (
+        <div className={styles.body} ref={dropdownBody}>
+          <div>
+            <i className="ri-arrow-right-s-line"></i>
+            bio
+          </div>
+        </div>
+      )}
     </div>
   );
 };
