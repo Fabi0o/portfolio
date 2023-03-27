@@ -21,6 +21,7 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
         <i className="ri-play-fill"></i>
         {currentInfo}
       </div>
+
       {currentInfo == "contacts" && (
         <div className={styles.body} ref={dropdownBody}>
           <div>
