@@ -1,10 +1,14 @@
 import styles from "@/styles/DropdownInfo.module.scss";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { InfoProps } from "@/types/Info";
 
 const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
   const dropdownHeader = useRef<HTMLDivElement>(null);
   const dropdownBody = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    dropdownHeader.current!.classList.remove(`${styles.active}`);
+  }, [currentInfo]);
 
   const displayBody = () => {
     dropdownHeader.current!.classList.toggle(`${styles.active}`);
