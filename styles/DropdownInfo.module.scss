@@ -42,9 +42,22 @@
     display: flex;
     font-size: 12px;
     gap: 0.5rem;
+
+    & > :last-child:hover {
+      color: white;
+      cursor: pointer;
+    }
   }
 }
 
 .visible {
   display: flex;
+}
+
+.folder1 {
+  color: $accent-color-orange;
+}
+
+.folder2 {
+  color: $accent-color-green;
 }
