@@ -47,17 +47,17 @@
       color: white;
       cursor: pointer;
     }
+
+    &:nth-child(1) .folder {
+      color: $accent-color-orange;
+    }
+
+    &:nth-child(2) .folder {
+      color: $accent-color-green;
+    }
   }
 }
 
 .visible {
   display: flex;
-}
-
-.folder1 {
-  color: $accent-color-orange;
-}
-
-.folder2 {
-  color: $accent-color-green;
 }

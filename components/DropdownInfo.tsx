@@ -39,12 +39,12 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
         <div className={styles.body} ref={dropdownBody}>
           <div>
             <i className="ri-arrow-right-s-line"></i>
-            <i className={`ri-folder-3-fill ${styles.folder1}`}></i>
+            <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>work-history</div>
           </div>
           <div>
             <i className="ri-arrow-right-s-line"></i>
-            <i className={`ri-folder-3-fill ${styles.folder2}`}></i>
+            <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>skills</div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
         <div className={styles.body} ref={dropdownBody}>
           <div>
             <i className="ri-arrow-right-s-line"></i>
-            <i className={`ri-folder-3-fill ${styles.folder1}`}></i>
+            <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>interests</div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
         <div className={styles.body} ref={dropdownBody}>
           <div>
             <i className="ri-arrow-right-s-line"></i>
-            <i className={`ri-folder-3-fill ${styles.folder1}`}></i>
+            <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>bio</div>
           </div>
         </div>
