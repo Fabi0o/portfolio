@@ -27,8 +27,7 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
           <div>
             <i className="ri-mail-fill"></i>
             <a href="mailto:marcin.fabicki@yahoo.com">
-              {" "}
-              marcin.fabicki@yahoo.com{" "}
+              marcin.fabicki@yahoo.com
             </a>
           </div>
           <div>
