@@ -1,8 +1,9 @@
 import styles from "@/styles/DropdownInfo.module.scss";
 import { useEffect, useRef } from "react";
-import { InfoProps } from "@/types/Info";
+import Props from "@/types/Props";
+import Content from "@/types/Content";
 
-const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
+const DropdownInfo: React.FC<Props> = ({ currentInfo, setCurrentContent }) => {
   const dropdownHeader = useRef<HTMLDivElement>(null);
   const dropdownBody = useRef<HTMLDivElement>(null);
 
@@ -13,6 +14,10 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
   const displayBody = () => {
     dropdownHeader.current!.classList.toggle(`${styles.active}`);
     dropdownBody.current!.classList.toggle(`${styles.visible}`);
+  };
+
+  const handleClick = (content: Content) => {
+    setCurrentContent!(content);
   };
 
   return (
@@ -39,12 +44,12 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
 
       {currentInfo == "professional-info" && (
         <div className={styles.body} ref={dropdownBody}>
-          <div>
+          <div onClick={() => handleClick("work-history")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>work-history</div>
           </div>
-          <div>
+          <div onClick={() => handleClick("skills")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>skills</div>
@@ -54,7 +59,7 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
 
       {currentInfo == "hobbies" && (
         <div className={styles.body} ref={dropdownBody}>
-          <div>
+          <div onClick={() => handleClick("interests")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>interests</div>
@@ -64,7 +69,7 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
 
       {currentInfo == "personal-info" && (
         <div className={styles.body} ref={dropdownBody}>
-          <div>
+          <div onClick={() => handleClick("bio")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>bio</div>

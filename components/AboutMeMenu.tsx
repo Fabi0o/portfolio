@@ -1,14 +1,20 @@
 import styles from "@/styles/AboutMeMenu.module.scss";
-import { Info, InfoProps } from "@/types/Info";
+import Info from "@/types/Info";
+import Props from "@/types/Props";
 import { useEffect } from "react";
 import DropdownInfo from "./DropdownInfo";
 
-const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
+const AboutMeMenu: React.FC<Props> = ({
+  currentInfo,
+  setCurrentInfo,
+  currentContent,
+  setCurrentContent,
+}) => {
   useEffect(() => {
     const element = document.getElementById(currentInfo);
-
+    console.log(currentContent);
     element?.classList.add(styles.current);
-  }, [currentInfo]);
+  }, [currentInfo, currentContent]);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLElement;
@@ -37,7 +43,10 @@ const AboutMeMenu: React.FC<InfoProps> = ({ currentInfo, setCurrentInfo }) => {
       </div>
 
       <div className={styles.content}>
-        <DropdownInfo currentInfo={currentInfo} />
+        <DropdownInfo
+          currentInfo={currentInfo}
+          setCurrentContent={setCurrentContent}
+        />
         <DropdownInfo currentInfo={"contacts"} />
       </div>
     </div>
