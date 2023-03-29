@@ -39,13 +39,13 @@
 
   & > * {
     align-items: center;
+    cursor: pointer;
     display: flex;
     font-size: 12px;
     gap: 0.5rem;
 
-    & > :last-child:hover {
+    &:hover > * {
       color: white;
-      cursor: pointer;
     }
 
     &:nth-child(1) .folder {
