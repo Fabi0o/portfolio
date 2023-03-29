@@ -1,5 +1,3 @@
-import React from "react";
-
 type Info = "professional-info" | "personal-info" | "hobbies" | "contacts";
 
 interface InfoProps {
