@@ -26,11 +26,14 @@ const DropdownInfo: React.FC<InfoProps> = ({ currentInfo }) => {
         <div className={styles.body} ref={dropdownBody}>
           <div>
             <i className="ri-mail-fill"></i>
-            <div>marcin.fabicki@yahoo.com</div>
+            <a href="mailto:marcin.fabicki@yahoo.com">
+              {" "}
+              marcin.fabicki@yahoo.com{" "}
+            </a>
           </div>
           <div>
             <i className="ri-phone-fill"></i>
-            <div>+48693737612</div>
+            <a href="tel:+48693737612">+48693737612</a>
           </div>
         </div>
       )}
