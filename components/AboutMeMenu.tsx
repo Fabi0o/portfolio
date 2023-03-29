@@ -12,9 +12,9 @@ const AboutMeMenu: React.FC<Props> = ({
 }) => {
   useEffect(() => {
     const element = document.getElementById(currentInfo);
-    console.log(currentContent);
+
     element?.classList.add(styles.current);
-  }, [currentInfo, currentContent]);
+  }, [currentInfo]);
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLElement;
@@ -45,6 +45,7 @@ const AboutMeMenu: React.FC<Props> = ({
       <div className={styles.content}>
         <DropdownInfo
           currentInfo={currentInfo}
+          currentContent={currentContent}
           setCurrentContent={setCurrentContent}
         />
         <DropdownInfo currentInfo={"contacts"} />

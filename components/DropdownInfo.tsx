@@ -3,12 +3,26 @@ import { useEffect, useRef } from "react";
 import Props from "@/types/Props";
 import Content from "@/types/Content";
 
-const DropdownInfo: React.FC<Props> = ({ currentInfo, setCurrentContent }) => {
+const DropdownInfo: React.FC<Props> = ({
+  currentInfo,
+  currentContent,
+  setCurrentContent,
+}) => {
   const dropdownHeader = useRef<HTMLDivElement>(null);
   const dropdownBody = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     dropdownHeader.current!.classList.remove(`${styles.active}`);
+    if (currentInfo != "contacts")
+      setCurrentContent!(
+        currentInfo == "hobbies"
+          ? "interests"
+          : currentInfo == "personal-info"
+          ? "bio"
+          : currentInfo == "professional-info"
+          ? "work-history"
+          : "work-history"
+      );
   }, [currentInfo]);
 
   const displayBody = () => {
@@ -17,7 +31,12 @@ const DropdownInfo: React.FC<Props> = ({ currentInfo, setCurrentContent }) => {
   };
 
   const handleClick = (content: Content) => {
+    if (content != currentContent)
+      document
+        .getElementById(currentContent!)!
+        .classList.remove(`${styles.active}`);
     setCurrentContent!(content);
+    document.getElementById(content)!.classList.add(`${styles.active}`);
   };
 
   return (
@@ -44,12 +63,12 @@ const DropdownInfo: React.FC<Props> = ({ currentInfo, setCurrentContent }) => {
 
       {currentInfo == "professional-info" && (
         <div className={styles.body} ref={dropdownBody}>
-          <div onClick={() => handleClick("work-history")}>
+          <div id="work-history" onClick={() => handleClick("work-history")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>work-history</div>
           </div>
-          <div onClick={() => handleClick("skills")}>
+          <div id="skills" onClick={() => handleClick("skills")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>skills</div>
@@ -59,7 +78,7 @@ const DropdownInfo: React.FC<Props> = ({ currentInfo, setCurrentContent }) => {
 
       {currentInfo == "hobbies" && (
         <div className={styles.body} ref={dropdownBody}>
-          <div onClick={() => handleClick("interests")}>
+          <div id="interests" onClick={() => handleClick("interests")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>interests</div>
@@ -69,7 +88,7 @@ const DropdownInfo: React.FC<Props> = ({ currentInfo, setCurrentContent }) => {
 
       {currentInfo == "personal-info" && (
         <div className={styles.body} ref={dropdownBody}>
-          <div onClick={() => handleClick("bio")}>
+          <div id="bio" onClick={() => handleClick("bio")}>
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>bio</div>

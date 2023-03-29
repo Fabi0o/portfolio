@@ -25,7 +25,7 @@
 .active {
   color: $secondary-color-white;
 
-  & > i {
+  &.header > i {
     transform: rotate(90deg);
   }
 }
