@@ -1,5 +1,5 @@
 import styles from "@/styles/Home.module.scss";
-import Introduction from "@/components/Introduction";
+import Introduction from "@/components/home/Introduction";
 
 export default function Home() {
   return (

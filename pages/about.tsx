@@ -1,6 +1,6 @@
 import styles from "@/styles/About.module.scss";
-import AboutMeContent from "@/components/AboutMeContent";
-import AboutMeMenu from "@/components/AboutMeMenu";
+import AboutMeContent from "@/components/about/AboutMeContent";
+import AboutMeMenu from "@/components/about/AboutMeMenu";
 import { useState } from "react";
 import Info from "@/types/Info";
 import Content from "@/types/Content";
