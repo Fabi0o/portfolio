@@ -17,7 +17,8 @@ const About = () => {
         currentContent={currentContent}
         setCurrentContent={setCurrentContent}
       />
-      <AboutMeContent />
+
+      <AboutMeContent currentContent={currentContent} />
     </div>
   );
 };

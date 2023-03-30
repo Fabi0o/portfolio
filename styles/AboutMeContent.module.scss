@@ -1,0 +1,10 @@
+@import "./colors.module";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.code_snippet {
+  border-left: 1px solid $lines-color;
+}

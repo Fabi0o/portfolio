@@ -1,0 +1,25 @@
+@import "./colors.module";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  align-items: center;
+  border-right: 1px solid $lines-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  width: 12rem;
+
+  & > i:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.body {
+  border-top: 1px solid $lines-color;
+  height: 100%;
+}
