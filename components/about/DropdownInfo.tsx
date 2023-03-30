@@ -1,6 +1,6 @@
 import styles from "@/styles/DropdownInfo.module.scss";
 import { useEffect, useRef } from "react";
-import Props from "@/types/Props";
+import { Props } from "@/types/Props";
 import Content from "@/types/Content";
 
 const DropdownInfo: React.FC<Props> = ({

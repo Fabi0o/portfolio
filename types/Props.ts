@@ -8,4 +8,8 @@ interface Props {
   setCurrentContent?: React.Dispatch<React.SetStateAction<Content>>;
 }
 
-export default Props;
+interface ContentProps {
+  currentContent: Content;
+}
+
+export type { Props, ContentProps };
