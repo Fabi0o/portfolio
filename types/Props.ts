@@ -10,6 +10,7 @@ interface Props {
 
 interface ContentProps {
   currentContent: Content;
+  setCurrentContent: React.Dispatch<React.SetStateAction<Content>>;
 }
 
 export type { Props, ContentProps };

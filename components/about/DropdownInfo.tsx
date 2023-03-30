@@ -17,6 +17,14 @@ const DropdownInfo: React.FC<Props> = ({
     if (currentInfo != "contacts") setCurrentContent!(undefined);
   }, [currentInfo]);
 
+  useEffect(() => {
+    if (!currentContent)
+      Array.from(dropdownBody.current!.childNodes).forEach((div) => {
+        const element = div as HTMLElement;
+        element.classList.remove(`${styles.active}`);
+      });
+  }, [currentContent]);
+
   const displayBody = () => {
     dropdownHeader.current!.classList.toggle(`${styles.active}`);
     dropdownBody.current!.classList.toggle(`${styles.visible}`);
