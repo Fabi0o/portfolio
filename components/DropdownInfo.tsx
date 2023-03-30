@@ -13,16 +13,8 @@ const DropdownInfo: React.FC<Props> = ({
 
   useEffect(() => {
     dropdownHeader.current!.classList.remove(`${styles.active}`);
-    if (currentInfo != "contacts")
-      setCurrentContent!(
-        currentInfo == "hobbies"
-          ? "interests"
-          : currentInfo == "personal-info"
-          ? "bio"
-          : currentInfo == "professional-info"
-          ? "work-history"
-          : "work-history"
-      );
+
+    if (currentInfo != "contacts") setCurrentContent!(undefined);
   }, [currentInfo]);
 
   const displayBody = () => {
@@ -31,12 +23,14 @@ const DropdownInfo: React.FC<Props> = ({
   };
 
   const handleClick = (content: Content) => {
-    if (content != currentContent)
+    if (content != currentContent && currentContent) {
       document
         .getElementById(currentContent!)!
         .classList.remove(`${styles.active}`);
+    }
+
     setCurrentContent!(content);
-    document.getElementById(content)!.classList.add(`${styles.active}`);
+    document.getElementById(content!)!.classList.add(`${styles.active}`);
   };
 
   return (

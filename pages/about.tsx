@@ -7,7 +7,7 @@ import Content from "@/types/Content";
 
 const About = () => {
   const [currentInfo, setCurrentInfo] = useState<Info>("professional-info");
-  const [currentContent, setCurrentContent] = useState<Content>("work-history");
+  const [currentContent, setCurrentContent] = useState<Content>();
 
   return (
     <div className={styles.container}>
