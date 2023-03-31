@@ -16,7 +16,14 @@ const TextContent: React.FC<ContentProps> = ({
           ></i>
         </div>
       </div>
-      <div className={styles.body}></div>
+      <div className={styles.body}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero omnis quas
+        officiis ad, vel modi repudiandae exercitationem magni impedit, sapiente
+        asperiores illum eaque. Repellat commodi vitae quibusdam debitis sed
+        tenetur ipsam ut sunt optio voluptatibus quam eius quidem est, tempore
+        repudiandae ducimus perferendis dolores aut eaque doloremque, ea quas.
+        Aperiam.
+      </div>
     </div>
   ) : (
     <div></div>
