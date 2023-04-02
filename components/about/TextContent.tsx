@@ -1,5 +1,7 @@
 import { ContentProps } from "@/types/Props";
 import styles from "@/styles/TextContent.module.scss";
+import WorkHistory from "./WorkHistory";
+import Skills from "./Skills";
 
 const TextContent: React.FC<ContentProps> = ({
   currentContent,
@@ -17,12 +19,8 @@ const TextContent: React.FC<ContentProps> = ({
         </div>
       </div>
       <div className={styles.body}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero omnis quas
-        officiis ad, vel modi repudiandae exercitationem magni impedit, sapiente
-        asperiores illum eaque. Repellat commodi vitae quibusdam debitis sed
-        tenetur ipsam ut sunt optio voluptatibus quam eius quidem est, tempore
-        repudiandae ducimus perferendis dolores aut eaque doloremque, ea quas.
-        Aperiam.
+        {currentContent == "work-history" && <WorkHistory />}
+        {currentContent == "skills" && <Skills />}
       </div>
     </div>
   ) : (
