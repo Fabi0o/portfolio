@@ -14,7 +14,8 @@ const DropdownInfo: React.FC<Props> = ({
   useEffect(() => {
     dropdownHeader.current!.classList.remove(`${styles.active}`);
 
-    if (currentInfo != "contacts") setCurrentContent!(undefined);
+    if (currentInfo != "contacts" && currentInfo != "projects")
+      setCurrentContent!(undefined);
   }, [currentInfo]);
 
   useEffect(() => {
@@ -96,6 +97,10 @@ const DropdownInfo: React.FC<Props> = ({
             <div>bio</div>
           </div>
         </div>
+      )}
+
+      {currentInfo == "projects" && (
+        <div className={styles.body} ref={dropdownBody}></div>
       )}
     </div>
   );
