@@ -2,7 +2,7 @@ import styles from "@/styles/AboutMeMenu.module.scss";
 import Info from "@/types/Info";
 import { Props } from "@/types/Props";
 import { useEffect } from "react";
-import DropdownInfo from "./DropdownInfo";
+import DropdownInfo from "../common/DropdownInfo";
 
 const AboutMeMenu: React.FC<Props> = ({
   currentInfo,
