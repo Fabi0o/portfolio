@@ -1,0 +1,11 @@
+@import "./colors.module";
+
+.container {
+  display: grid;
+  grid-template-columns: 18rem auto;
+  height: 100%;
+}
+
+.menu {
+  border-right: 1px solid $lines-color;
+}
