@@ -44,6 +44,10 @@
     font-size: 12px;
     gap: 0.5rem;
 
+    &.projects {
+      font-size: 16px;
+    }
+
     &:hover > * {
       color: white;
     }
@@ -54,6 +58,10 @@
 
     &:nth-child(2) .folder {
       color: $accent-color-green;
+    }
+
+    &.project {
+      font-size: 16px;
     }
   }
 }

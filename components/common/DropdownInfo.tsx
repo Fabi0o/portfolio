@@ -100,7 +100,20 @@ const DropdownInfo: React.FC<Props> = ({
       )}
 
       {currentInfo == "projects" && (
-        <div className={styles.body} ref={dropdownBody}></div>
+        <div className={`${styles.body} ${styles.projects}`} ref={dropdownBody}>
+          <div className={styles.project}>
+            <i className="ri-reactjs-fill"></i>
+            <div>React</div>
+          </div>
+          <div className={styles.project}>
+            <i className="ri-html5-fill"></i>
+            <div>HTML</div>
+          </div>
+          <div className={styles.project}>
+            <i className="ri-css3-fill"></i>
+            <div>CSS</div>
+          </div>
+        </div>
       )}
     </div>
   );
