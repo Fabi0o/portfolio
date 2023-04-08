@@ -10,10 +10,8 @@ const Bio = () => {
       </p>
       <p>
         Currently looking for my first job as web developer. I am eager to put
-        my skills to the test and contribute to a dynamic and innovative team. I
-        am eager to put my skills to the test and contribute to a dynamic and
-        innovative team. Feel free to contact me by email, phone or contact
-        form.
+        my skills to the test and contribute to a dynamic and innovative team.
+        Feel free to contact me by email, phone or contact form.
       </p>
     </div>
   );
