@@ -20,14 +20,6 @@ const DropdownInfo: React.FC<Props> = ({
       setCurrentContent!(undefined);
   }, [currentInfo]);
 
-  // useEffect(() => {
-  //   dropdownBody.current?.childNodes.forEach((div) => {
-  //     const element = div as HTMLElement;
-  //     element.classList.add(`${styles.active}`);
-  //     console.log(element.classList);
-  //   });
-  // }, [currentProjects]);
-
   useEffect(() => {
     if (!currentContent && currentInfo != "projects")
       Array.from(dropdownBody.current!.childNodes).forEach((div) => {
