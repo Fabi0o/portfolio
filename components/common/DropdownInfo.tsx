@@ -45,22 +45,10 @@ const DropdownInfo: React.FC<Props> = ({
   };
 
   const handleClickProjects = (tech: "React" | "CSS" | "HTML") => {
-    if (tech == "React") {
-      setCurrentProjects!({
-        ...currentProjects!,
-        React: !currentProjects?.React,
-      });
-    } else if (tech == "HTML") {
-      setCurrentProjects!({
-        ...currentProjects!,
-        HTML: !currentProjects?.HTML,
-      });
-    } else if (tech == "CSS") {
-      setCurrentProjects!({
-        ...currentProjects!,
-        CSS: !currentProjects?.CSS,
-      });
-    }
+    setCurrentProjects!({
+      ...currentProjects!,
+      [tech]: !currentProjects![tech],
+    });
   };
 
   return (
