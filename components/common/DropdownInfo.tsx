@@ -1,5 +1,5 @@
 import styles from "@/styles/DropdownInfo.module.scss";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Props } from "@/types/Props";
 import Content from "@/types/Content";
 
@@ -42,6 +42,25 @@ const DropdownInfo: React.FC<Props> = ({
 
     setCurrentContent!(content);
     document.getElementById(content!)!.classList.add(`${styles.active}`);
+  };
+
+  const handleClickProjects = (tech: "React" | "CSS" | "HTML") => {
+    if (tech == "React") {
+      setCurrentProjects!({
+        ...currentProjects!,
+        React: !currentProjects?.React,
+      });
+    } else if (tech == "HTML") {
+      setCurrentProjects!({
+        ...currentProjects!,
+        HTML: !currentProjects?.HTML,
+      });
+    } else if (tech == "CSS") {
+      setCurrentProjects!({
+        ...currentProjects!,
+        CSS: !currentProjects?.CSS,
+      });
+    }
   };
 
   return (
@@ -111,6 +130,7 @@ const DropdownInfo: React.FC<Props> = ({
               currentProjects?.React && styles.active
             }`}
             id="React"
+            onClick={() => handleClickProjects("React")}
           >
             <i className="ri-reactjs-fill"></i>
             <div>React</div>
@@ -119,6 +139,7 @@ const DropdownInfo: React.FC<Props> = ({
             className={`${styles.project} ${
               currentProjects?.HTML && styles.active
             }`}
+            onClick={() => handleClickProjects("HTML")}
             id="HTML"
           >
             <i className="ri-html5-fill"></i>
@@ -128,6 +149,7 @@ const DropdownInfo: React.FC<Props> = ({
             className={`${styles.project} ${
               currentProjects?.CSS && styles.active
             }`}
+            onClick={() => handleClickProjects("CSS")}
             id="CSS"
           >
             <i className="ri-css3-fill"></i>
