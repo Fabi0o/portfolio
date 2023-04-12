@@ -1,34 +1,9 @@
 import styles from "@/styles/Nav.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 const Nav = () => {
   const { asPath } = useRouter();
-
-  useEffect(() => {
-    toggleCurrentClass(asPath, "add");
-  });
-
-  const toggleCurrentClass = (path: string, action: "add" | "remove") => {
-    let current;
-
-    if (path == "/") {
-      current = document.querySelector("#home");
-    } else if (path == "/about") {
-      current = document.querySelector("#about");
-    } else if (path == "/projects") {
-      current = document.querySelector("#projects");
-    } else if (path == "/contact") {
-      current = document.querySelector("#contact");
-    }
-
-    if (action == "add") {
-      current?.classList.add(`${styles.current}`);
-    } else if (action == "remove") {
-      current?.classList.remove(`${styles.current}`);
-    }
-  };
 
   const displayMenu = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLElement;
@@ -44,8 +19,6 @@ const Nav = () => {
     const navMenu = document.querySelector(`.${styles.nav_menu}`)!;
     const icone = document.querySelector("i")!;
 
-    if (e.target != navMenu) toggleCurrentClass(asPath, "remove");
-
     if (navMenu.className == `${styles.nav_menu} ${styles.active}`) {
       navMenu.classList.toggle(styles.active);
       icone.className = "ri-menu-line";
@@ -59,26 +32,34 @@ const Nav = () => {
 
         <div className={styles.nav_menu} onClick={closeMenu}>
           <ul className={styles.list}>
-            <li id="home">
+            <li id="home" className={asPath == "/" ? styles.current : ""}>
               <Link className={styles.link} href="/">
                 _hello
               </Link>
             </li>
 
-            <li id="about">
+            <li id="about" className={asPath == "/about" ? styles.current : ""}>
               <Link className={styles.link} href="/about">
                 _about-me
               </Link>
             </li>
 
-            <li id="projects">
+            <li
+              id="projects"
+              className={asPath == "/projects" ? styles.current : ""}
+            >
               <Link className={styles.link} href="/projects">
                 _projects
               </Link>
             </li>
           </ul>
 
-          <div className={styles.contact} id="contact">
+          <div
+            className={`${styles.contact} ${
+              asPath == "/contact" ? styles.current : ""
+            }`}
+            id="contact"
+          >
             <Link className={styles.link} href="/contact">
               _contact-me
             </Link>
