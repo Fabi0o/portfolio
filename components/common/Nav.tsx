@@ -1,36 +1,21 @@
 import styles from "@/styles/Nav.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Nav = () => {
   const { asPath } = useRouter();
-
-  const displayMenu = (e: React.MouseEvent<HTMLElement>) => {
-    const target = e.target as HTMLElement;
-    const navMenu = document.querySelector(`.${styles.nav_menu}`);
-
-    target.className =
-      target.className == "ri-menu-line" ? "ri-close-line" : "ri-menu-line";
-
-    navMenu!.classList.toggle(styles.active);
-  };
-
-  const closeMenu = (e: React.MouseEvent<HTMLDivElement>) => {
-    const navMenu = document.querySelector(`.${styles.nav_menu}`)!;
-    const icone = document.querySelector("i")!;
-
-    if (navMenu.className == `${styles.nav_menu} ${styles.active}`) {
-      navMenu.classList.toggle(styles.active);
-      icone.className = "ri-menu-line";
-    }
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header>
       <nav className={styles.nav}>
         <div className={styles.name}>marcin-fabicki</div>
 
-        <div className={styles.nav_menu} onClick={closeMenu}>
+        <div
+          className={`${styles.nav_menu} ${isMenuOpen ? styles.active : ""}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
           <ul className={styles.list}>
             <li id="home" className={asPath == "/" ? styles.current : ""}>
               <Link className={styles.link} href="/">
@@ -67,7 +52,10 @@ const Nav = () => {
         </div>
 
         <div className={styles.hamburger}>
-          <i className="ri-menu-line" onClick={displayMenu}></i>
+          <i
+            className={isMenuOpen ? "ri-close-line" : "ri-menu-line"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          ></i>
         </div>
       </nav>
     </header>
