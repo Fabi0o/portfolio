@@ -115,7 +115,7 @@ const DropdownInfo: React.FC<Props> = ({
         <div className={`${styles.body} ${styles.projects}`} ref={dropdownBody}>
           <div
             className={`${styles.project} ${
-              currentProjects?.React && styles.active
+              currentProjects?.React ? styles.active : ""
             }`}
             id="React"
             onClick={() => handleClickProjects("React")}
@@ -125,7 +125,7 @@ const DropdownInfo: React.FC<Props> = ({
           </div>
           <div
             className={`${styles.project} ${
-              currentProjects?.HTML && styles.active
+              currentProjects?.HTML ? styles.active : ""
             }`}
             onClick={() => handleClickProjects("HTML")}
             id="HTML"
@@ -135,7 +135,7 @@ const DropdownInfo: React.FC<Props> = ({
           </div>
           <div
             className={`${styles.project} ${
-              currentProjects?.CSS && styles.active
+              currentProjects?.CSS ? styles.active : ""
             }`}
             onClick={() => handleClickProjects("CSS")}
             id="CSS"

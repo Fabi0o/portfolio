@@ -48,9 +48,9 @@
       font-size: 16px;
     }
 
-    &:hover > * {
-      color: white;
-    }
+    // &:hover > * {
+    //   color: white;
+    // }
 
     &:nth-child(1) .folder {
       color: $accent-color-orange;
@@ -68,4 +68,10 @@
 
 .visible {
   display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+  .body > *:hover {
+    color: white;
+  }
 }
