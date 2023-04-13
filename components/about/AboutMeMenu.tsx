@@ -1,7 +1,6 @@
 import styles from "@/styles/AboutMeMenu.module.scss";
 import Info from "@/types/Info";
 import { Props } from "@/types/Props";
-import { useEffect } from "react";
 import DropdownInfo from "../common/DropdownInfo";
 
 const AboutMeMenu: React.FC<Props> = ({
@@ -10,17 +9,9 @@ const AboutMeMenu: React.FC<Props> = ({
   currentContent,
   setCurrentContent,
 }) => {
-  useEffect(() => {
-    const element = document.getElementById(currentInfo);
-
-    element?.classList.add(styles.current);
-  }, [currentInfo]);
-
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const target = e.target as HTMLElement;
-    const current = document.getElementById(currentInfo);
 
-    current?.classList.remove(styles.current);
     setCurrentInfo!(target.id as Info);
   };
 
@@ -30,16 +21,26 @@ const AboutMeMenu: React.FC<Props> = ({
         <i
           onClick={handleClick}
           id="professional-info"
-          className="ri-terminal-box-fill"
+          className={`ri-terminal-box-fill ${
+            currentInfo == "professional-info" ? styles.current : ""
+          }`}
         ></i>
 
         <i
           onClick={handleClick}
           id="personal-info"
-          className="ri-user-4-fill"
+          className={`ri-user-4-fill ${
+            currentInfo == "personal-info" ? styles.current : ""
+          }`}
         ></i>
 
-        <i onClick={handleClick} id="hobbies" className="ri-gamepad-fill"></i>
+        <i
+          onClick={handleClick}
+          id="hobbies"
+          className={`ri-gamepad-fill ${
+            currentInfo == "hobbies" ? styles.current : ""
+          }`}
+        ></i>
       </div>
 
       <div className={styles.content}>
@@ -48,6 +49,7 @@ const AboutMeMenu: React.FC<Props> = ({
           currentContent={currentContent}
           setCurrentContent={setCurrentContent}
         />
+
         <DropdownInfo currentInfo={"contacts"} />
       </div>
     </div>
