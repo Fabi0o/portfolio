@@ -1,5 +1,5 @@
 import styles from "@/styles/DropdownInfo.module.scss";
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { Props } from "@/types/Props";
 import Content from "@/types/Content";
 
@@ -10,38 +10,14 @@ const DropdownInfo: React.FC<Props> = ({
   currentProjects,
   setCurrentProjects,
 }) => {
-  const dropdownHeader = useRef<HTMLDivElement>(null);
-  const dropdownBody = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    dropdownHeader.current!.classList.remove(`${styles.active}`);
-
-    if (currentInfo != "contacts" && currentInfo != "projects")
-      setCurrentContent!(undefined);
-  }, [currentInfo]);
-
-  useEffect(() => {
-    if (!currentContent && currentInfo != "projects")
-      Array.from(dropdownBody.current!.childNodes).forEach((div) => {
-        const element = div as HTMLElement;
-        element.classList.remove(`${styles.active}`);
-      });
-  }, [currentContent]);
+  const [isBodyDisplayed, setIsBodyDisplayed] = useState(true);
 
   const displayBody = () => {
-    dropdownHeader.current!.classList.toggle(`${styles.active}`);
-    dropdownBody.current!.classList.toggle(`${styles.visible}`);
+    setIsBodyDisplayed(!isBodyDisplayed);
   };
 
   const handleClickAbout = (content: Content) => {
-    if (content != currentContent && currentContent) {
-      document
-        .getElementById(currentContent!)!
-        .classList.remove(`${styles.active}`);
-    }
-
     setCurrentContent!(content);
-    document.getElementById(content!)!.classList.add(`${styles.active}`);
   };
 
   const handleClickProjects = (tech: "React" | "CSS" | "HTML") => {
@@ -53,13 +29,18 @@ const DropdownInfo: React.FC<Props> = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles.header} ref={dropdownHeader} onClick={displayBody}>
+      <div
+        className={`${styles.header} ${isBodyDisplayed ? styles.active : ""}`}
+        onClick={displayBody}
+      >
         <i className="ri-play-fill"></i>
         {currentInfo}
       </div>
 
       {currentInfo == "contacts" && (
-        <div className={styles.body} ref={dropdownBody}>
+        <div
+          className={`${styles.body} ${isBodyDisplayed ? styles.visible : ""}`}
+        >
           <div>
             <i className="ri-mail-fill"></i>
             <a href="mailto:marcin.fabicki@yahoo.com">
@@ -74,16 +55,23 @@ const DropdownInfo: React.FC<Props> = ({
       )}
 
       {currentInfo == "professional-info" && (
-        <div className={styles.body} ref={dropdownBody}>
+        <div
+          className={`${styles.body} ${isBodyDisplayed ? styles.visible : ""}`}
+        >
           <div
             id="work-history"
+            className={currentContent == "work-history" ? styles.active : ""}
             onClick={() => handleClickAbout("work-history")}
           >
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>work-history</div>
           </div>
-          <div id="skills" onClick={() => handleClickAbout("skills")}>
+          <div
+            id="skills"
+            className={currentContent == "skills" ? styles.active : ""}
+            onClick={() => handleClickAbout("skills")}
+          >
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>skills</div>
@@ -92,8 +80,14 @@ const DropdownInfo: React.FC<Props> = ({
       )}
 
       {currentInfo == "hobbies" && (
-        <div className={styles.body} ref={dropdownBody}>
-          <div id="interests" onClick={() => handleClickAbout("interests")}>
+        <div
+          className={`${styles.body} ${isBodyDisplayed ? styles.visible : ""}`}
+        >
+          <div
+            id="interests"
+            className={currentContent == "interests" ? styles.active : ""}
+            onClick={() => handleClickAbout("interests")}
+          >
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>interests</div>
@@ -102,8 +96,14 @@ const DropdownInfo: React.FC<Props> = ({
       )}
 
       {currentInfo == "personal-info" && (
-        <div className={styles.body} ref={dropdownBody}>
-          <div id="bio" onClick={() => handleClickAbout("bio")}>
+        <div
+          className={`${styles.body} ${isBodyDisplayed ? styles.visible : ""}`}
+        >
+          <div
+            id="bio"
+            className={currentContent == "bio" ? styles.active : ""}
+            onClick={() => handleClickAbout("bio")}
+          >
             <i className="ri-arrow-right-s-line"></i>
             <i className={`ri-folder-3-fill ${styles.folder}`}></i>
             <div>bio</div>
@@ -112,7 +112,11 @@ const DropdownInfo: React.FC<Props> = ({
       )}
 
       {currentInfo == "projects" && (
-        <div className={`${styles.body} ${styles.projects}`} ref={dropdownBody}>
+        <div
+          className={`${styles.body} ${styles.projects} ${
+            isBodyDisplayed ? styles.visible : ""
+          }`}
+        >
           <div
             className={`${styles.project} ${
               currentProjects?.React ? styles.active : ""
