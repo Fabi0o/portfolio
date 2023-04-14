@@ -1,6 +1,6 @@
 const Bio = () => {
   return (
-    <div>
+    <>
       <p>
         My name is Marcin Fabicki, and I am a web developer with a passion for
         creating beautiful and functional websites. I recently completed
@@ -13,7 +13,7 @@ const Bio = () => {
         my skills to the test and contribute to a dynamic and innovative team.
         Feel free to contact me by email, phone or contact form.
       </p>
-    </div>
+    </>
   );
 };
 

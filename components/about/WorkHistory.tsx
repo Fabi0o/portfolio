@@ -1,6 +1,6 @@
 const WorkHistory = () => {
   return (
-    <div>
+    <>
       <p>
         Since 2019, I have been working as a consultant in a call center. My
         responsibilities include extending contracts with clients of the largest
@@ -14,7 +14,7 @@ const WorkHistory = () => {
         assigned tasks focused on building a full-stack application using React,
         Express.js, and MySQL.
       </p>
-    </div>
+    </>
   );
 };
 

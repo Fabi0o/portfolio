@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Skills = () => {
   return (
-    <div>
+    <>
       <p>
         I have strong front-end development skills, including expertise in HTML,
         CSS, CSS modules, SCSS, JavaScript, React, and Next.js. I am experienced
@@ -22,7 +22,7 @@ const Skills = () => {
         have excellent problem-solving and analytical skills, and I am always
         looking for ways to improve my work.
       </p>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 const Interests = () => {
   return (
-    <div>
+    <>
       <p>
         In addition to my passion for web development and programming, I have a
         few other hobbies and interests that keep me engaged outside of work.
@@ -16,7 +16,7 @@ const Interests = () => {
         about new software, I&#39;m always looking for ways to stay ahead of the
         curve and incorporate cutting-edge technology into my work.
       </p>
-    </div>
+    </>
   );
 };
 
